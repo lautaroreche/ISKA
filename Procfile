@@ -1,0 +1,1 @@
+web: gunicorn iska.wsgi --log-file -

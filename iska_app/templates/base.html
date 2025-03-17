@@ -1,0 +1,62 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+</head>
+<body>
+    <header class="w100 flex-col">
+        <div class="container-logo">
+            <a href="{% url 'home' %}" title="Logo de ISKA" class="anchor-logo flex-center">
+                <img src="{% static 'images/logo.png' %}" alt="Logo de ISKA" class="logo">
+            </a>
+        </div>
+        <nav class="flex-center">
+            <ul class="flex-row flex-center">
+                <li>
+                    <a href="" title="Sección de Inicio">INICIO</a>
+                </li>
+                <li>
+                    <p>.</p>
+                </li>
+                <li>
+                    <a href="" title="Sección de Servicios">SERVICIOS</a>
+                </li>
+                <li>
+                    <p>.</p>
+                </li>
+                <li>
+                    <a href="" title="Sección de Sobre nosotros">SOBRE NOSOTROS</a>
+                </li>
+                <li>
+                    <p>.</p>
+                </li>
+                <li>
+                    <a href="" title="Sección de Contacto">CONTACTO</a>
+                </li>
+                <li>
+                    <p>.</p>
+                </li>
+                <li>
+                    <a href="" title="Sección de Blog">BLOG</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    {% block content %}{% endblock %}
+    <footer class="flex-row">
+        <div>
+            <p>© 2025 Iska</p>
+        </div>
+        <div>
+            <p>Todos los derechos reservados</p>
+        </div>
+    </footer>
+</body>
+</html>
