@@ -16,13 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from iska_app.views import home, inicio, servicios, sobre_nosotros, contacto, blog
+from iska_app.views import inicio, servicios, sobre_nosotros, contacto, blog
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home, name='home'),
-    path('inicio/', inicio, name='inicio'),
+    path('', inicio, name='inicio'),
     path('servicios/', servicios, name='servicios'),
     path('sobre_nosotros/', sobre_nosotros, name='sobre_nosotros'),
     path('contacto/', contacto, name='contacto'),

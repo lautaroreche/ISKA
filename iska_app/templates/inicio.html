@@ -6,9 +6,26 @@
 
 {% block content %}
     <main>
-        <div class="div-temporal-separador">
-            <p>Carrusel</p>
+        <div class="carousel-container">
+            <div class="carousel">
+                {% for image_carousel in images_carousel %}
+                    <div class="carousel-item flex-center">
+                        <img src="{{ image_carousel.image.url }}" alt="{{ image_carousel.title }}">
+                        <p class="carousel-title">{{ image_carousel.title }}</p>
+                        <div class="carousel-button-container">
+                            <a href="{% url 'servicios' %}" class="carousel-button">{{ image_carousel.text_button }}</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <button class="carousel-command button-prev" onclick="moveSlide(-1)">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button class="carousel-command button-next" onclick="moveSlide(1)">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
         </div>
+        
         <div class="div-temporal-separador">
             <p>¡Bienvenido a Iska!</p>
         </div>
@@ -31,4 +48,22 @@
             <p>Datos de contacto</p>
         </div>
     </main>
+
+    <script>
+        let currentIndex = 0;
+        const items = document.querySelectorAll('.carousel-item');
+        const totalItems = items.length;
+    
+        function moveSlide(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = totalItems - 1;
+            if (currentIndex >= totalItems) currentIndex = 0;
+
+            const carousel = document.querySelector('.carousel');
+            const offset = -currentIndex * 100;
+            carousel.style.transform = `translateX(${offset}%)`;
+        }
+    
+        setInterval(() => moveSlide(1), 5000);
+    </script>
 {% endblock %}

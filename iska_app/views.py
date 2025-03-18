@@ -1,12 +1,13 @@
 from django.shortcuts import render
-
-
-def home(request):
-    return render(request, 'inicio.html')
+from .models import Carousel
 
 
 def inicio(request):
-    return render(request, 'inicio.html')
+    images_carousel = Carousel.objects.all()
+    context = {
+        'images_carousel': images_carousel
+    }
+    return render(request, 'inicio.html', context)
 
 
 def servicios(request):
