@@ -5,48 +5,61 @@
 {% block title %}Iska{% endblock %}
 
 {% block content %}
-    <main>
-        <div class="carousel-container">
-            <div class="carousel">
-                {% for image_carousel in images_carousel %}
-                    <div class="carousel-item flex-center">
-                        <img src="{{ image_carousel.image.url }}" alt="{{ image_carousel.title }}">
-                        <p class="carousel-title">{{ image_carousel.title }}</p>
-                        <div class="carousel-button-container">
-                            <a href="{% url 'servicios' %}" class="carousel-button">{{ image_carousel.text_button }}</a>
+    <main class="flex-col flex-center">
+        <section>
+            <div class="carousel-container">
+                <div class="carousel">
+                    {% for image_carousel in images_carousel %}
+                        <div class="carousel-item flex-center">
+                            <img src="{{ image_carousel.image.url }}" alt="{{ image_carousel.title }}">
+                            <p class="carousel-title">{{ image_carousel.title }}</p>
+                            <div class="carousel-button-container">
+                                <a href="{% url 'servicios' %}" class="carousel-button">{{ image_carousel.text_button }}</a>
+                            </div>
                         </div>
+                    {% endfor %}
+                </div>
+                <button class="carousel-command button-prev" onclick="moveSlide(-1)">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="carousel-command button-next" onclick="moveSlide(1)">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+        <section class="horizontal-section">
+            <p class="title-horizontal-section">¡Bienvenido a Iska!</p>
+            <p class="text-horizontal-section">En Iska nos dedicamos a brindarte un acompañamiento interdisciplinario personalizado para tu bienestar integral. Nuestro enfoque está pensado para facilitar la búsqueda del equilibrio que necesitas en tu vida diaria.</p>
+        </section>
+        <section class="card-section">
+            <p class="title-horizontal-section">Servicios</p>
+            <div class="cards-container flex-center">
+                {% for service in services %}
+                    <div class="card">
+                        <img src="{{ service.image.url }}" alt="{{ service.title }}" class="service-image">
+                        <p class="service-title">{{ service.title }}</p>
+                        <p class="service-description">{{ service.title }}</p>
+                        <a href="{% url 'servicios' %}" class="service-button">Más información</a>
                     </div>
                 {% endfor %}
             </div>
-            <button class="carousel-command button-prev" onclick="moveSlide(-1)">
-                <i class="fa-solid fa-chevron-left"></i>
-            </button>
-            <button class="carousel-command button-next" onclick="moveSlide(1)">
-                <i class="fa-solid fa-chevron-right"></i>
-            </button>
-        </div>
-        
-        <div class="div-temporal-separador">
-            <p>¡Bienvenido a Iska!</p>
-        </div>
-        <div class="div-temporal-separador">
-            <p>Servicios</p>
-        </div>
-        <div class="div-temporal-separador">
-            <p>FAQ</p>
-        </div>
-        <div class="div-temporal-separador">
-            <p>Testimonio</p>
-        </div>
-        <div class="div-temporal-separador">
-            <p>Conoce a nuestro equipo</p>
-        </div>
-        <div class="div-temporal-separador">
-            <p>Sobre nosotros</p>
-        </div>
-        <div class="div-temporal-separador">
-            <p>Datos de contacto</p>
-        </div>
+        </section>
+            <div class="div-temporal-separador">
+                <p>FAQ</p>
+            </div>
+            <div class="div-temporal-separador">
+                <p>Testimonio</p>
+            </div>
+            <div class="div-temporal-separador">
+                <p>Conoce a nuestro equipo</p>
+            </div>
+            <div class="div-temporal-separador">
+                <p>Sobre nosotros</p>
+            </div>
+            <div class="div-temporal-separador">
+                <p>Datos de contacto</p>
+            </div>
+        </section>
     </main>
 
     <script>
