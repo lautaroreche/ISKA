@@ -1,6 +1,7 @@
 :root {
     --main-color: #356d5c;
     --dark-color: #333;
+    --grey-color: #888;
     --light-color: #eee;
     --bad-color: #ff0000;
     --warning-color: #ffe150;
@@ -59,8 +60,23 @@ header {
     height: 270px;
 }
 
+nav {
+    max-width: 800px;
+    justify-content: center;
+    position: relative;
+}
+
+nav::before,
+nav::after {
+    content: "";
+    flex-grow: 1;
+    height: 1px;
+    background-color: var(--grey-color);
+    margin: 0 15px;
+}
+
 nav ul {
-    gap: 40px;
+    gap: 20px;
     list-style: none;
     margin: 40px 0;
 }
@@ -73,11 +89,17 @@ nav ul li {
 
 nav ul li p {
     height: 28px;
+    color: var(--grey-color);
 }
 
 nav ul li a {
     text-decoration: none;
-    color: var(--main-color);
+    color: var(--grey-color);
+}
+
+.div-temporal-separador {
+    height: 200px;
+    background-color: red;
 }
 
 footer {

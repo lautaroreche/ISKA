@@ -17,34 +17,34 @@
                 <img src="{% static 'images/logo.png' %}" alt="Logo de ISKA" class="logo">
             </a>
         </div>
-        <nav class="flex-center">
+        <nav class="flex-center w100">
             <ul class="flex-row flex-center">
                 <li>
-                    <a href="" title="Sección de Inicio">INICIO</a>
+                    <a href="{% url 'inicio' %}" title="Sección de Inicio">INICIO</a>
                 </li>
                 <li>
                     <p>.</p>
                 </li>
                 <li>
-                    <a href="" title="Sección de Servicios">SERVICIOS</a>
+                    <a href="{% url 'servicios' %}" title="Sección de Servicios">SERVICIOS</a>
                 </li>
                 <li>
                     <p>.</p>
                 </li>
                 <li>
-                    <a href="" title="Sección de Sobre nosotros">SOBRE NOSOTROS</a>
+                    <a href="{% url 'sobre_nosotros' %}" title="Sección de Sobre nosotros">SOBRE NOSOTROS</a>
                 </li>
                 <li>
                     <p>.</p>
                 </li>
                 <li>
-                    <a href="" title="Sección de Contacto">CONTACTO</a>
+                    <a href="{% url 'contacto' %}" title="Sección de Contacto">CONTACTO</a>
                 </li>
                 <li>
                     <p>.</p>
                 </li>
                 <li>
-                    <a href="" title="Sección de Blog">BLOG</a>
+                    <a href="{% url 'blog' %}" title="Sección de Blog">BLOG</a>
                 </li>
             </ul>
         </nav>
