@@ -1,13 +1,17 @@
 from django.shortcuts import render
-from .models import Carousel, Services
+from .models import Carousel, Services, Faq, Team
 
 
 def inicio(request):
     images_carousel = Carousel.objects.all()
     services = Services.objects.all()
+    faqs = Faq.objects.all()
+    team = Team.objects.all()
     context = {
         'images_carousel': images_carousel,
         'services': services,
+        'faqs': faqs,
+        'team': team,
     }
     return render(request, 'inicio.html', context)
 

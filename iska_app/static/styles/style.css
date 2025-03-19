@@ -15,7 +15,11 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Helvetica Neue', 'Roboto', sans-serif;
-    color: var(--grey-color);
+    color: white;
+}
+
+.color-white {
+    color: white important;
 }
 
 .flex-center {
@@ -38,10 +42,21 @@
     width: 100%;
 }
 
+.bg-main {
+    background-color: var(--main-color);
+}
+
+.bg-grey {
+    background-color: var(--light-color);
+}
+
 body {
-    max-width: 1200px;
     width: 100%;
     margin: 0 auto;
+}
+
+section {
+    padding: 25px 0;
 }
 
 header, footer {
@@ -77,9 +92,9 @@ nav::after {
 }
 
 nav ul {
-    gap: 50px;
+    gap: 70px;
     list-style: none;
-    margin: 30px 0;
+    margin: 30px;
     align-items: center;
 
 }
@@ -88,6 +103,7 @@ nav ul li {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 19px;
 }
 
 nav ul li a {
@@ -103,7 +119,7 @@ nav ul li a {
 
 .carousel-container {
     position: relative;
-    max-width: 1000px;
+    max-width: 1300px;
     width: 100%;
     height: 450px;
     margin: auto;
@@ -124,10 +140,10 @@ nav ul li a {
 }
 
 .carousel img {
-    width: 1000px;
+    width: 1300px;
     height: 100%;
     object-fit: cover;
-    filter: brightness(45%);
+    filter: brightness(80%);
 }
 
 .carousel-title {
@@ -149,14 +165,24 @@ nav ul li a {
     width: 100%;
 }
 
-.carousel-button {
-    padding: 15px;
+.general-button {
+    padding: 10px;
     color: white;
     font-size: 22px;
     background-color: var(--main-color);
     text-decoration: none;
     border-radius: 5px;
     letter-spacing: 0.5px;
+}
+
+.general-button:hover, .button-prev:hover, .button-next:hover, .card-button:hover, .social-media-icons-container i:hover, details:hover {
+    filter: brightness(1.2);
+}
+
+.green-section-button {
+    color: var(--main-color);
+    background-color: white;
+    border: 1px solid var(--dark-color);
 }
 
 .carousel-command {
@@ -180,21 +206,58 @@ nav ul li a {
 }
 
 .horizontal-section {
-    margin: 25px;
-    max-width: 1000px;
-    height: 200px;
+    width: 100%;
+    min-height: 250px;
+    gap: 10px;
 }
 
-.title-horizontal-section {
-    margin: 25px;
+.horizontal-section-green {
+    background-color: var(--main-color);
+}
+
+.horizontal-section-green h2, .horizontal-section-green p {
+    color: white;
+}
+
+.horizontal-section p {
+    max-width: 900px;
+    text-align: center;
+}
+
+.contact-section {
+    justify-content: space-evenly;
+    background-color: var(--light-color);
+}
+
+.contact-section div {
+    gap: 10px;
+    min-width: 200px ;
+}
+
+.contact-section i {
+    color: var(--main-color);
     font-size: 35px;
+}
+
+.contact-section p {
+    color: var(--dark-color);
+    font-size: 20px;
+}
+
+.social-media-icons-container i {
+    font-size: 28px;
+}
+
+.title-section {
+    margin-bottom: 10px;
+    font-size: 40px;
     font-weight: 400;
     text-align: center;
     color: var(--main-color);
 }
 
 .text-horizontal-section {
-    margin: 25px;
+    margin: 10px;
     font-size: 19px;
     color: var(--grey-color)
 }
@@ -202,7 +265,6 @@ nav ul li a {
 .card-section {
     padding: 25px;
     width: 100vw;
-    background-color: var(--light-color);
 }
 
 .cards-container {
@@ -211,42 +273,80 @@ nav ul li a {
 }
 
 .card {
+    padding: 10px 0;
     width: 300px;
-    height: 650px;
-    background-color: var(--light-color);
     border-radius: 5px;
     text-align: center;
 }
 
-.service-image {
-    width: 300px;
-    height: 350px;
+.card-image {
+    width: 100%;
+    height: 400px;
     object-fit: cover;
 }
 
-.service-title {
+.card-info-title {
     color: var(--main-color);
     font-size: 21px;
 }
 
-.service-description {
+.card-info-description {
     margin: 10px 0;
     letter-spacing: 0.2px;
+    color: var(--dark-color);
 }
 
-.service-button {
-    padding: 9px;
+.card-button {
+    padding: 10px;
     color: white;
-    font-size: 18px;
-    font-weight: 200;
+    font-size: 19px;
+    font-weight: 300;
     background-color: var(--main-color);
     text-decoration: none;
     border-radius: 5px;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.4px;
 }
 
-.container-text-service-card {
+.container-card-info {
     padding: 20px;
+}
+
+.faq-section {
+    width: 1000px;
+}
+
+details {
+    background-color: var(--main-color);
+    color: white;
+    border: 1px solid var(--border-dark-color);
+    overflow: hidden;
+}
+
+summary {
+    padding: 15px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+summary::after {
+    content: "▼";
+    font-size: 14px;
+}
+
+details[open] summary::after {
+    content: "▲";
+}
+
+details p {
+    margin: 0;
+    padding: 30px;
+    background-color: var(--light-color);
+    color: var(--dark-color);
 }
 
 footer {

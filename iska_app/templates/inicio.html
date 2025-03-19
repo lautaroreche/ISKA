@@ -14,7 +14,7 @@
                             <img src="{{ image_carousel.image.url }}" alt="{{ image_carousel.title }}">
                             <p class="carousel-title">{{ image_carousel.title }}</p>
                             <div class="carousel-button-container">
-                                <a href="{% url 'servicios' %}" class="carousel-button">{{ image_carousel.text_button }}</a>
+                                <a href="{% url 'servicios' %}" class="general-button">{{ image_carousel.text_button }}</a>
                             </div>
                         </div>
                     {% endfor %}
@@ -27,39 +27,97 @@
                 </button>
             </div>
         </section>
-        <section class="horizontal-section">
-            <p class="title-horizontal-section">¡Bienvenido a Iska!</p>
+        <section class="horizontal-section flex-col flex-center">
+            <h1 class="title-section">¡Bienvenido a Iska!</h1>
             <p class="text-horizontal-section">En Iska nos dedicamos a brindarte un acompañamiento interdisciplinario personalizado para tu bienestar integral. Nuestro enfoque está pensado para facilitar la búsqueda del equilibrio que necesitas en tu vida diaria.</p>
         </section>
-        <section class="card-section">
-            <p class="title-horizontal-section">Servicios</p>
+        <section class="card-section bg-grey">
+            <h2 class="title-section">Servicios</h2>
             <div class="cards-container flex-center">
                 {% for service in services %}
                     <div class="card">
-                        <img src="{{ service.image.url }}" alt="{{ service.title }}" class="service-image">
-                        <div class="container-text-service-card">
-                            <p class="service-title">{{ service.title }}</p>
-                            <p class="service-description">{{ service.short_description }}</p>
+                        <img src="{{ service.image.url }}" alt="{{ service.title }}" class="card-image">
+                        <div class="container-card-info">
+                            <p class="card-info-title">{{ service.title }}</p>
+                            <p class="card-info-description">{{ service.short_description }}</p>
                         </div>
-                        <a href="{% url 'servicios' %}" class="service-button">Más información</a>
+                        <a href="{% url 'servicios' %}" class="card-button">Más información</a>
                     </div>
                 {% endfor %}
             </div>
         </section>
-            <div class="div-temporal-separador">
-                <p>FAQ</p>
+        <section>
+            <div class="faq-section">
+                <h2 class="title-section">Preguntas frecuentes</h2>
+                {% for faq in faqs %}
+                    {% if forloop.first %}
+                        <details open>
+                    {% else %}
+                        <details>
+                    {% endif %}
+                        <summary>{{ faq.question }}</summary>
+                        <p>{{ faq.answer }}</p>
+                    </details>
+                {% empty %}
+                    <p>No hay preguntas frecuentes todavía</p>
+                {% endfor %}
             </div>
-            <div class="div-temporal-separador">
-                <p>Testimonio</p>
+        </section>
+        <section class="w100">
+            <div class="flex-col horizontal-section horizontal-section-green bg-main flex-center">
+                <p class="text-horizontal-section">“Estoy muy agradecido por el apoyo y la guía que he recibido de Iska. Su equipo profesional y comprometido me ha ayudado a mejorar mi bienestar de una manera que nunca pensé posible. ¡Altamente recomendado!”</p>
+                <p>[Juan Pérez]</p>
             </div>
-            <div class="div-temporal-separador">
-                <p>Conoce a nuestro equipo</p>
+        </section>
+        <section class="card-section">
+            <h2 class="title-section">Conoce nuestro equipo</h2>
+            <div class="cards-container flex-center">
+                {% for team_member in team %}
+                    <div class="card">
+                        <img src="{{ team_member.image.url }}" alt="{{ team_member.full_name }}" class="card-image">
+                        <div class="container-card-info">
+                            <p class="card-info-title">{{ team_member.full_name }}</p>
+                            <p class="card-info-description">{{ team_member.position }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
-            <div class="div-temporal-separador">
-                <p>Sobre nosotros</p>
+        </section>
+        <section class="flex-col flex-center horizontal-section horizontal-section-green">
+            <h2 class="title-section">Sobre nosotros</h2>
+            <p class="text-horizontal-section">Iska es una clínica de acompañamiento interdisciplinario dedicada a proporcionar servicios personalizados de bienestar y equilibrio. Nuestro equipo de profesionales cualificados está comprometido a ayudarte a alcanzar tus metas y mejorar tu calidad de vida.</p>
+            <div>
+                <a href="{% url 'servicios' %}" class="general-button green-section-button">Descubre más</a>
             </div>
-            <div class="div-temporal-separador">
-                <p>Datos de contacto</p>
+        </section>
+        <section class="flex-row flex-center horizontal-section contact-section">
+            <div class="flex-col flex-center">
+                <i class="fa-solid fa-phone"></i>
+                <p>Teléfono</p>
+                <p>(555) 555-5555</p>
+            </div>
+            <div class="flex-col flex-center">
+                <i class="fa-solid fa-envelope"></i>
+                <p>Email</p>
+                <p>ejemplo@mail.com</p>
+            </div>
+            <div class="flex-col flex-center">
+                <i class="fa-solid fa-thumbs-up"></i>
+                <p>Conectar</p>
+                <div class="social-media-icons-container flex-center">
+                    <a href="">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
             </div>
         </section>
     </main>
