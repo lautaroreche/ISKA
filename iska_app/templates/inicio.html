@@ -37,8 +37,10 @@
                 {% for service in services %}
                     <div class="card">
                         <img src="{{ service.image.url }}" alt="{{ service.title }}" class="service-image">
-                        <p class="service-title">{{ service.title }}</p>
-                        <p class="service-description">{{ service.title }}</p>
+                        <div class="container-text-service-card">
+                            <p class="service-title">{{ service.title }}</p>
+                            <p class="service-description">{{ service.short_description }}</p>
+                        </div>
                         <a href="{% url 'servicios' %}" class="service-button">Más información</a>
                     </div>
                 {% endfor %}

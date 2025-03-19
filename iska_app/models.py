@@ -13,6 +13,7 @@ class Carousel (models.Model):
 
 class Services(models.Model):
     title = models.CharField(max_length=100)
+    short_description = models.TextField(max_length=200)
     description = models.TextField(max_length=500)
     text_button = models.CharField(max_length=50)
     image = CloudinaryField('image', resource_type='image')
