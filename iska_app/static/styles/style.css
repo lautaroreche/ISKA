@@ -51,12 +51,15 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    margin: 0 auto;
 }
 
-section {
-    padding: 25px 0;
+section, main {
+    padding: 20px 0;
 }
 
 header, footer {
@@ -108,7 +111,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: var(--grey-color);
+    color: var(--dark-color);
     text-align: center;
 }
 
@@ -167,16 +170,16 @@ nav ul li a {
     text-decoration: none;
     border-radius: 5px;
     letter-spacing: 0.5px;
+    border: none;
 }
 
 .general-button:hover, .button-prev:hover, .button-next:hover, .card-button:hover, .social-media-icons-container i:hover, details:hover {
     filter: brightness(1.2);
 }
 
-.green-section-button {
+.white-button {
     color: var(--main-color);
     background-color: white;
-    border: 1px solid var(--dark-color);
 }
 
 .carousel-command {
@@ -199,23 +202,44 @@ nav ul li a {
     right: 10px;
 }
 
-.horizontal-section {
-    width: 100%;
-    min-height: 250px;
+.horizontal-section-container {
     gap: 10px;
 }
 
-.horizontal-section-green {
+.horizontal-section-white {
+    width: 100%;
+    min-height: 250px;
+}
+
+.horizontal-section-white h1, .horizontal-section-white h2 {
+    color: var(--main-color);
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.horizontal-section-white p {
+    color: var(--dark-color);
+    font-size: 19px;
+}
+
+.horizontal-section-main {
+    width: 100%;
+    min-height: 250px;
     background-color: var(--main-color);
 }
 
-.horizontal-section-green h2, .horizontal-section-green p {
-    color: white;
+.horizontal-section-main h2 {
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.horizontal-section-main p {
+    font-size: 19px;
 }
 
 .contact-section {
     justify-content: space-evenly;
-    background-color: var(--light-color);
+    min-height: 250px;
 }
 
 .contact-section div {
@@ -234,38 +258,54 @@ nav ul li a {
     text-decoration: none;
 }
 
+form {
+    margin-top: 20px;
+}
+
+.form-group, .faq-section-container {
+    margin: 10px 0;
+}
+
+form label {
+    color: var(--dark-color);
+}
+
+form input, form textarea {
+    padding-left: 5px;
+    min-height: 30px;
+    color: var(--dark-color);
+    font-size: 16px;
+}
+
+form textarea {
+    padding-top: 4px;
+    resize: none;
+}
+
+form input:focus, form textarea:focus {
+    border: 2px solid var(--main-color);
+    outline: none;
+    border-radius: 4px;
+}
+
 .social-media-icons-container i {
     font-size: 28px;
 }
 
 .title-section {
-    margin-bottom: 10px;
     font-size: 40px;
     font-weight: 400;
+    color: var(--main-color);
     text-align: center;
 }
 
-.title-section-color-white {
-    color: white;
-}
-
-.title-section-color-main {
-    color: var(--main-color);
-}
-
-.text-horizontal-section {
-    margin: 10px;
-    font-size: 19px;
-    color: var(--grey-color)
-}
-
 .card-section {
-    padding: 25px;
     width: 100vw;
+    margin: 20px 0;
 }
 
 .cards-container {
-    gap: 20px;
+    gap: 25px;
     flex-wrap: wrap;
 }
 
@@ -274,6 +314,7 @@ nav ul li a {
     width: 300px;
     border-radius: 5px;
     text-align: center;
+    gap: 15px;
 }
 
 .card-horizontal {
@@ -323,20 +364,16 @@ nav ul li a {
     font-size: 19px;
 }
 
-.card-button {
+.card-button, .form-button {
     padding: 10px;
     color: white;
     font-size: 19px;
-    font-weight: 300;
     background-color: var(--main-color);
     text-decoration: none;
     border-radius: 5px;
     letter-spacing: 0.4px;
     text-align: center;
-}
-
-.faq-section {
-    width: 1000px;
+    border: none;
 }
 
 details {
@@ -373,12 +410,17 @@ details p {
     color: var(--dark-color);
 }
 
-.banner, .carousel-container, .horizontal-section p, .card-horizontal{
+.banner, .carousel-container, .horizontal-section-container, .card-horizontal {
     max-width: 1300px;
     text-align: center;
 }
 
+details, summary {
+    min-width: 1000px;
+}
+
 .banner {
+    margin-bottom: 20px;
     position: relative;
     background-image: url('/static/images/banner.png');
     background-size: cover;
@@ -386,16 +428,15 @@ details p {
     height: 400px;
 }
 
-.banner-title {
+.banner h3 {
     position: absolute;
-    font-size: 25px;
-    color: white;
+    font-size: 35px;
+    font-weight: 400;
 }
 
 .key_words_services_list {
     padding-left: 0;
     list-style-position: inside;
-    list
 }
 
 .key_words_services_list li::marker {
@@ -408,11 +449,16 @@ details p {
     font-size: 18px;
 }
 
+.container-contact-section {
+    width: 400px;
+    gap: 10px;
+    margin: 25px 0;
+}
+
 footer {
-    display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     background-color: var(--dark-color);
-    color: var(--light-color);
+    color: white;
     height: 80px;
 }

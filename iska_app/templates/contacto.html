@@ -5,33 +5,31 @@
 {% block title %}Contacto | Iska{% endblock %}
 
 {% block content %}
-    <section class="flex-center">
-        <div class="banner flex-center">
-            <h3 class="banner-title">Contacto</h3>
-        </div>
+    <section class="banner flex-center">
+        <h3>Contacto</h3>
     </section>
-    <main class="contact-section">
-        <div>
-            <h2 class="title-section title-section-color-main">Contáctanos</h2>
-            <p class="text-horizontal-section">¡Contáctanos para empezar tu camino hacia el bienestar! Estamos aquí para acompañarte en tu proceso de crecimiento personal y cuidado de tu salud.</p>
+    <main class="contact-section flex-row w100">
+        <div class="container-contact-section">
+            <h2 class="title-section">Contáctanos</h2>
+            <p>¡Contáctanos para empezar tu camino hacia el bienestar! Estamos aquí para acompañarte en tu proceso de crecimiento personal y cuidado de tu salud.</p>
             <form method="post">
                 {% csrf_token %}
-                {{ form.as_p }}
-        
-                {% if form.errors %}
-                    <ul class="errorlist">
-                        {% for field in form %}
-                            {% for error in field.errors %}
-                                <li>{{ error }}</li>
-                            {% endfor %}
-                        {% endfor %}
-                    </ul>
-                {% endif %}
-        
-                <button type="submit">Enviar formulario</button>
+                <div class="form-group flex-col">
+                    {{ form.name.label_tag }}
+                    {{ form.name }}
+                </div>
+                <div class="form-group flex-col">
+                    {{ form.email.label_tag }}
+                    {{ form.email }}
+                </div>
+                <div class="form-group flex-col">
+                    {{ form.message.label_tag }}
+                    {{ form.message }}
+                </div>
+                <button type="submit" class="form-button w100">Enviar</button>
             </form>
         </div>
-        <div class="flex-col flex-center">
+        <div class="container-contact-section flex-col flex-center">
             <i class="fa-solid fa-thumbs-up"></i>
             <p>Conectar</p>
             <div class="social-media-icons-container flex-center">

@@ -11,15 +11,15 @@
     <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body>
-    <header class="w100 flex-col">
+<body class="flex-col flex-center">
+    <header class="w100 flex-col flex-center">
         <div class="container-logo">
             <a href="{% url 'inicio' %}" title="Logo de ISKA" class="anchor-logo flex-center">
                 <img src="{% static 'images/logo.png' %}" alt="Logo de ISKA" class="logo">
             </a>
         </div>
         <nav class="flex-center w100">
-            <ul class="flex-row flex-center">
+            <ul class="flex-row">
                 <li>
                     <a href="{% url 'inicio' %}" title="Sección de Inicio">INICIO</a>
                 </li>
@@ -39,13 +39,9 @@
         </nav>
     </header>
     {% block content %}{% endblock %}
-    <footer class="flex-row">
-        <div>
-            <p>© 2025 Iska</p>
-        </div>
-        <div>
-            <p>Todos los derechos reservados</p>
-        </div>
+    <footer class="flex-row w100">
+        <p>© 2025 Iska</p>
+        <p>Todos los derechos reservados</p>
     </footer>
 </body>
 </html>

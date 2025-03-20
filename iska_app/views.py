@@ -41,8 +41,12 @@ def contacto(request):
             name = form.cleaned_data['name']
             email = form.cleaned_data['email']
             message = form.cleaned_data['message']
+
+            print(f"Nombre: {name}")
+            print(f"Correo: {email}")
+            print(f"Mensaje: {message}")
             
-            return HttpResponse(f"Gracias {name}, tu mensaje ha sido enviado.")
+            return render(request, 'congrats.html')
         else:
             return render(request, 'contacto.html', {'form': form})
     else:
@@ -59,7 +63,7 @@ def blog(request):
 
 
 def post(request, post_id):
-    post = Post.objects.filter(id=post_id)
+    post = Post.objects.get(id=post_id)
     context = {
         'post': post,
     }

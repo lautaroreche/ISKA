@@ -5,16 +5,14 @@
 {% block title %}Post | Iska{% endblock %}
 
 {% block content %}
-    <section class="flex-center">
-        <div class="banner flex-center">
-            <h3 class="banner-title">Post</h3>
-        </div>
+    <section class="banner flex-center">
+        <h3>Post</h3>
     </section>
-    <main class="horizontal-section flex-col flex-center">
-        {% for x in post %}
-            <h2 class="title-section title-section-color-main">{{ x.title }}</h2>
-            <p class="text-horizontal-section">{{ x.content|linebreaksbr }}</p>
-        {% endfor %}
-        <a href="{% url 'contacto' %}" class="card-button">Contactanos</a>
+    <main class="horizontal-section-white flex-col flex-center">
+        <div class="horizontal-section-container flex-col flex-center">
+            <h2 class="title-section">{{ post.title }}</h2>
+            <p>{{ post.content|linebreaksbr }}</p>
+            <a href="{% url 'contacto' %}" class="general-button green-button">Contactanos</a>
+        </div>
     </main>
 {% endblock %}

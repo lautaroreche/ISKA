@@ -5,15 +5,15 @@
 {% block title %}Iska{% endblock %}
 
 {% block content %}
-    <section class="flex-col flex-center">
+    <section class="flex-center">
         <div class="carousel-container">
             <div class="carousel">
                 {% for image_carousel in images_carousel %}
-                    <div class="carousel-item flex-center">
+                    <div class="carousel-item">
                         <img src="{{ image_carousel.image.url }}" alt="{{ image_carousel.title }}">
                         <p class="carousel-title">{{ image_carousel.title }}</p>
                         <div class="carousel-button-container">
-                            <a href="{% url 'servicios' %}" class="general-button">{{ image_carousel.text_button }}</a>
+                            <a href="{% url 'contacto' %}" class="general-button">{{ image_carousel.text_button }}</a>
                         </div>
                     </div>
                 {% endfor %}
@@ -26,15 +26,17 @@
             </button>
         </div>
     </section>
-    <main class="horizontal-section flex-col flex-center">
-        <h1 class="title-section title-section-color-main">¡Bienvenido a Iska!</h1>
-        <p class="text-horizontal-section">En Iska nos dedicamos a brindarte un acompañamiento interdisciplinario personalizado para tu bienestar integral. Nuestro enfoque está pensado para facilitar la búsqueda del equilibrio que necesitas en tu vida diaria.</p>
+    <main class="horizontal-section-white flex-col flex-center">
+        <div class="horizontal-section-container flex-col flex-center">
+            <h1>¡Bienvenido a Iska!</h1>
+            <p>En Iska nos dedicamos a brindarte un acompañamiento interdisciplinario personalizado para tu bienestar integral. Nuestro enfoque está pensado para facilitar la búsqueda del equilibrio que necesitas en tu vida diaria.</p>
+        </div>
     </main>
-    <section class="card-section bg-grey">
-        <h2 class="title-section title-section-color-main">Servicios</h2>
+    <section class="card-section bg-grey flex-col flex-center">
+        <h2 class="title-section">Servicios</h2>
         <div class="cards-container flex-center">
             {% for service in services %}
-                <div class="card-vertical">
+                <div class="card-vertical flex-col flex-center">
                     <img src="{{ service.image.url }}" alt="{{ service.title }}" class="card-vertical-image">
                     <div class="container-card-info">
                         <p class="card-info-title card-vertical-info-title">{{ service.title }}</p>
@@ -45,9 +47,9 @@
             {% endfor %}
         </div>
     </section>
-    <section class="flex-center">
-        <div class="faq-section">
-            <h2 class="title-section title-section-color-main">Preguntas frecuentes</h2>
+    <section class="flex-col flex-center">
+        <div class="faq-section-container">
+            <h2 class="title-section">Preguntas frecuentes</h2>
             {% for faq in faqs %}
                 {% if forloop.first %}
                     <details open>
@@ -62,17 +64,19 @@
             {% endfor %}
         </div>
     </section>
-    <section class="flex-col flex-center horizontal-section horizontal-section-green">
-        <p class="text-horizontal-section">“Estoy muy agradecido por el apoyo y la guía que he recibido de Iska. Su equipo profesional y comprometido me ha ayudado a mejorar mi bienestar de una manera que nunca pensé posible. ¡Altamente recomendado!”</p>
+    <section class="horizontal-section-main flex-col flex-center">
+        <div class="horizontal-section-container flex-col flex-center">
+            <p>“Estoy muy agradecido por el apoyo y la guía que he recibido de Iska. Su equipo profesional y comprometido me ha ayudado a mejorar mi bienestar de una manera que nunca pensé posible. ¡Altamente recomendado!”</p>
         <p>[Juan Pérez]</p>
+        </div>
     </section>
-    <section class="card-section">
-        <h2 class="title-section title-section-color-main">Conoce nuestro equipo</h2>
+    <section class="card-section flex-col flex-center">
+        <h2 class="title-section">Conoce nuestro equipo</h2>
         <div class="cards-container flex-center">
             {% for team_member in team %}
-                <div class="card-vertical">
+                <div class="card-vertical flex-col flex-center">
                     <img src="{{ team_member.image.url }}" alt="{{ team_member.full_name }}" class="card-vertical-image">
-                    <div class="container-card-info">
+                    <div>
                         <p class="card-info-title card-vertical-info-title">{{ team_member.full_name }}</p>
                         <p class="card-info-description">{{ team_member.position }}</p>
                     </div>
@@ -80,14 +84,14 @@
             {% endfor %}
         </div>
     </section>
-    <section class="flex-col flex-center horizontal-section horizontal-section-green">
-        <h2 class="title-section title-section-color-white">Sobre nosotros</h2>
-        <p class="text-horizontal-section">Iska es una clínica de acompañamiento interdisciplinario dedicada a proporcionar servicios personalizados de bienestar y equilibrio. Nuestro equipo de profesionales cualificados está comprometido a ayudarte a alcanzar tus metas y mejorar tu calidad de vida.</p>
-        <div>
-            <a href="{% url 'sobre_nosotros' %}" class="general-button green-section-button">Descubre más</a>
+    <section class="horizontal-section-main flex-col flex-center">
+        <div class="horizontal-section-container flex-col flex-center">
+            <h2>Sobre nosotros</h2>
+            <p>Iska es una clínica de acompañamiento interdisciplinario dedicada a proporcionar servicios personalizados de bienestar y equilibrio. Nuestro equipo de profesionales cualificados está comprometido a ayudarte a alcanzar tus metas y mejorar tu calidad de vida.</p>
+            <a href="{% url 'sobre_nosotros' %}" class="general-button white-button">Descubre más</a>
         </div>
     </section>
-    <section class="flex-row flex-center horizontal-section contact-section">
+    <section class="contact-section flex-row flex-center w100">
         <div class="flex-col flex-center">
             <i class="fa-solid fa-phone"></i>
             <p>Teléfono</p>
