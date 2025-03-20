@@ -2,15 +2,39 @@
 
 {% load static %}
 
-{% block title %}Iska{% endblock %}
+{% block title %}Blog | Iska{% endblock %}
 
 {% block content %}
+    <section class="flex-center">
+        <div class="banner flex-center">
+            <h3 class="banner-title">Blog</h3>
+        </div>
+    </section>
     <main>
-        <div class="div-temporal-separador">
-            <p>Imagen de fondo Blog</p>
-        </div>
-        <div class="div-temporal-separador">
-            <p>Posteo blog</p>
-        </div>
+        <section class="card-section">
+            <div class="cards-container flex-col flex-center">
+                {% for post in posts %}
+                    <div class="card-horizontal flex-row">
+                        <img src="{{ post.image.url }}" alt="{{ post.title }}" class="card-horizontal-image">
+                        <div class="card-horizontal-detail flex-col">
+                            <p class="card-info-title card-horizontal-info-title">{{ post.title }}</p>
+                            {% with words_list=post.content.split %}
+                                <p class="card-horizontal-info-description">
+                                    {% if words_list|length > 100 %}
+                                        {% for word in words_list|slice:":100" %}{{ word }} {% endfor %}...
+                                    {% else %}
+                                        {{ post.content }}
+                                    {% endif %}
+                                </p>
+                            {% endwith %}
+                            <a href="{% url 'post' post.id %}" class="card-button">Ver post</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
     </main>
+    <section class="flex-col flex-center horizontal-section horizontal-section-green">
+        <p class="text-horizontal-section">Todo comenzó con una idea sencilla impulsada por una profunda pasión. Como pequeña empresa, nos enorgullecemos de la atención personalizada y la dedicación a cada detalle. Nuestro enfoque se basa en la calidad y la integridad, garantizando que todo lo que hacemos refleje nuestro compromiso con la excelencia. Creemos en el poder de las relaciones duraderas, tanto con nuestros clientes como dentro de nuestra comunidad. Cada paso que damos tiene como objetivo crear conexiones significativas y brindar un servicio excepcional. Estamos constantemente aprendiendo y adaptándonos, esforzándonos por satisfacer tus necesidades de la manera más efectiva. Profundiza en nuestra página web para descubrir cómo podemos trabajar juntos o comunicarnos directamente.</p>
+    </section>
 {% endblock %}

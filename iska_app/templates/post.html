@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Post | Iska{% endblock %}
+
+{% block content %}
+    <section class="flex-center">
+        <div class="banner flex-center">
+            <h3 class="banner-title">Post</h3>
+        </div>
+    </section>
+    <main class="horizontal-section flex-col flex-center">
+        {% for x in post %}
+            <h2 class="title-section title-section-color-main">{{ x.title }}</h2>
+            <p class="text-horizontal-section">{{ x.content|linebreaksbr }}</p>
+        {% endfor %}
+        <a href="{% url 'contacto' %}" class="card-button">Contactanos</a>
+    </main>
+{% endblock %}

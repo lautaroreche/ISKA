@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from iska_app.views import inicio, servicios, sobre_nosotros, contacto, blog
+from iska_app.views import inicio, servicios, sobre_nosotros, contacto, blog, post
 
 
 urlpatterns = [
@@ -26,4 +26,5 @@ urlpatterns = [
     path('sobre_nosotros/', sobre_nosotros, name='sobre_nosotros'),
     path('contacto/', contacto, name='contacto'),
     path('blog/', blog, name='blog'),
+    path('post/<int:post_id>/', post, name='post'),
 ]

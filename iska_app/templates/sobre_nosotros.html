@@ -2,15 +2,35 @@
 
 {% load static %}
 
-{% block title %}Iska{% endblock %}
+{% block title %}Sobre nosotros | Iska{% endblock %}
 
 {% block content %}
-    <main>
-        <div class="div-temporal-separador">
-            <p>Sobre nuestra comunidad ISKA</p>
+    <section class="flex-center">
+        <div class="banner flex-center">
+            <h3 class="banner-title">Sobre nosotros</h3>
         </div>
-        <div class="div-temporal-separador">
-            <p>¿Listo para empezar tu camino hacia el bienestar?</p>
-        </div>
+    </section>
+    <main class="bg-main">            
+        <h2 class="title-section title-section-color-white">Nuestra comunidad Iska</h2>
+        <section class="card-section"></section>
+            <div class="cards-container flex-col flex-center">
+                <div class="card-horizontal flex-row">
+                    <img src="{% static 'images/mujer.webp' %}" alt="Imagen de una mujer">
+                    <div class="card-horizontal-detail flex-col">
+                        <div class="container-card-info">
+                            <p>Iska nació de la pasión por ayudar a las personas a mejorar su bienestar general. Con un enfoque interdisciplinario, nuestro equipo de expertos en nutrición, salud mental y bienestar físico está comprometido a acompañarte en tu camino hacia una vida más saludable y equilibrada. Nuestra clínica se especializa en crear hábitos saludables de forma integral, para que puedas mejorar tu proceso de adaptación como emigrante y disfrutar de una mejor calidad de vida y armoniosa desde cualquier parte del mundo ya que nuestra modalidad de trabajo es online.</p>
+                            <p>Empezá a formar parte de la Comunidad Iska para transformar tu vida y alcanzar tu máximo potencial. No estas sola/o!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+    <section class="flex-col flex-center horizontal-section horizontal-section-green">
+        <h2 class="title-section">¿Listo para empezar tu camino hacia el bienestar?</h2>
+        <p class="text-horizontal-section">Contáctanos para comenzar a crear hábitos saludables y mejorar tu proceso de adaptación como emigrante. Estamos aquí para acompañarte en este viaje.</p>
+        <div>
+            <a href="{% url 'contacto' %}" class="general-button green-section-button">Contactar ahora</a>
+        </div>
+    </section>
 {% endblock %}

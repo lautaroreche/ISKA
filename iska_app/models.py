@@ -11,7 +11,7 @@ class Carousel (models.Model):
         return self.title
     
 
-class Services(models.Model):
+class Service(models.Model):
     title = models.CharField(max_length=100)
     short_description = models.TextField(max_length=200)
     description = models.TextField(max_length=500)
@@ -38,4 +38,13 @@ class Team(models.Model):
 
     def __str__(self):
         return self.full_name
+    
+
+class Post(models.Model):
+    title = models.CharField(max_length=100)
+    content = models.TextField(max_length=4000)
+    image = CloudinaryField('image', resource_type='image')
+
+    def __str__(self):
+        return self.title
     

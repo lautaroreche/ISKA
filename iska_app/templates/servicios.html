@@ -2,27 +2,44 @@
 
 {% load static %}
 
-{% block title %}Iska{% endblock %}
+{% block title %}Servicios | Iska{% endblock %}
 
 {% block content %}
+    <section class="flex-center">
+        <div class="banner flex-center">
+            <h3 class="banner-title">Servicios</h3>
+        </div>
+    </section>
+    <section class="flex-col flex-center horizontal-section horizontal-section-green">
+        <p class="text-horizontal-section">Descubre nuestros servicios de terapia individual, asesoramiento nutricional, mindfulness y meditación en Iska. Nuestro enfoque interdisciplinario te guiará hacia el bienestar integral.</p>
+    </section>
     <main>
-        <div class="div-temporal-separador">
-            <p>Imagen de fondo Servicios</p>
-        </div>
-        <div class="div-temporal-separador">
-            <p>Descubre nuestros servicios de terapia individual, asesoramiento nutricional, mindfulness y meditación en Iska. Nuestro enfoque interdisciplinario te guiará hacia el bienestar integral.</p>
-        </div>
-        <div class="div-temporal-separador">
-            <p>Servicio 1</p>
-        </div>
-        <div class="div-temporal-separador">
-            <p>Servicio 2</p>
-        </div>
-        <div class="div-temporal-separador">
-            <p>Servicio 3</p>
-        </div>
-        <div class="div-temporal-separador">
-            <p>Testimonio</p>
-        </div>
+        <section class="card-section">
+            <div class="cards-container flex-col flex-center">
+                {% for service in services %}
+                    <div class="card-horizontal flex-row">
+                        <img src="{{ service.image.url }}" alt="{{ service.title }}" class="card-horizontal-image">
+                        <div class="card-horizontal-detail flex-col">
+                            <p class="card-info-title card-horizontal-info-title">{{ service.title }}</p>
+                            <p class="card-horizontal-info-description">{{ service.description }}</p>
+                            {% for service_name, list_key_words in services_key_words.items %}
+                                {% if service_name == service %}
+                                    <ul class="key_words_services_list">
+                                        {% for key_word in list_key_words %}
+                                            <li>{{ key_word }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            {% endfor %}
+                            <a href="{% url 'contacto' %}" class="card-button">Contactanos</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
     </main>
+    <section class="flex-col flex-center horizontal-section horizontal-section-green">
+        <p class="text-horizontal-section">“Me siento agradecido por el apoyo y la guía que he recibido en Iska. Ha sido una experiencia transformadora que recomendaría a cualquiera que busque mejorar su bienestar.”</p>
+        <p>[Juan Pérez]</p>
+    </section>
 {% endblock %}

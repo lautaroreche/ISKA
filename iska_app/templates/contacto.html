@@ -2,15 +2,52 @@
 
 {% load static %}
 
-{% block title %}Iska{% endblock %}
+{% block title %}Contacto | Iska{% endblock %}
 
 {% block content %}
-    <main>
-        <div class="div-temporal-separador">
-            <p>Contáctanos</p>
+    <section class="flex-center">
+        <div class="banner flex-center">
+            <h3 class="banner-title">Contacto</h3>
         </div>
-        <div class="div-temporal-separador">
-            <p>Ubicación</p>
+    </section>
+    <main class="contact-section">
+        <div>
+            <h2 class="title-section title-section-color-main">Contáctanos</h2>
+            <p class="text-horizontal-section">¡Contáctanos para empezar tu camino hacia el bienestar! Estamos aquí para acompañarte en tu proceso de crecimiento personal y cuidado de tu salud.</p>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+        
+                {% if form.errors %}
+                    <ul class="errorlist">
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+        
+                <button type="submit">Enviar formulario</button>
+            </form>
+        </div>
+        <div class="flex-col flex-center">
+            <i class="fa-solid fa-thumbs-up"></i>
+            <p>Conectar</p>
+            <div class="social-media-icons-container flex-center">
+                <a href="">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+            </div>
         </div>
     </main>
 {% endblock %}
