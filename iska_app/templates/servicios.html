@@ -18,7 +18,7 @@
             <div class="cards-container flex-col flex-center">
                 {% for service in services %}
                     <div class="card-horizontal flex-row">
-                        <img src="{{ service.image.url }}" alt="{{ service.title }}" class="card-horizontal-image">
+                        <img src="{{ service.image.url }}" alt="{{ service.title }}" class="card-horizontal-image image-service">
                         <div class="card-horizontal-detail flex-col">
                             <p class="card-info-title card-horizontal-info-title">{{ service.title }}</p>
                             <p class="card-horizontal-info-description">{{ service.description }}</p>

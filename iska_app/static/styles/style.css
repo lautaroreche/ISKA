@@ -50,6 +50,14 @@
     background-color: var(--light-color);
 }
 
+#check-menu-hamburger, .menu-hamburger {
+    display: none;
+}
+
+.menu-list a:hover {
+    color: var(--main-color);
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -58,16 +66,11 @@ body {
     width: 100%;
 }
 
-section, main {
+header, footer, section, main {
     padding: 20px 0;
 }
 
-header, footer {
-    padding: 20px;
-}
-
 header {
-    margin-top: 10px;
     align-items: center;
 }
 
@@ -99,7 +102,6 @@ nav ul {
     list-style: none;
     margin: 30px;
     align-items: center;
-
 }
 
 nav ul li {
@@ -293,6 +295,7 @@ form input:focus, form textarea:focus {
 }
 
 .title-section {
+    margin-bottom: 20px;
     font-size: 40px;
     font-weight: 400;
     color: var(--main-color);
@@ -359,7 +362,7 @@ form input:focus, form textarea:focus {
 }
 
 .card-horizontal-info-description {
-    margin: 10px 0;
+    margin: 5px 0;
     color: var(--dark-color);
     font-size: 19px;
 }
@@ -411,7 +414,7 @@ details p {
 }
 
 .banner, .carousel-container, .horizontal-section-container, .card-horizontal {
-    max-width: 1300px;
+    max-width: 1200px;
     text-align: center;
 }
 
@@ -452,7 +455,7 @@ details, summary {
 .container-contact-section {
     width: 400px;
     gap: 10px;
-    margin: 25px 0;
+    margin: 25px 10px;
 }
 
 footer {
@@ -461,4 +464,166 @@ footer {
     background-color: var(--dark-color);
     color: white;
     height: 80px;
+}
+
+
+@media screen  and (max-width: 1200px) {
+    .banner, .carousel-container, .horizontal-section-container, .card-horizontal {
+        max-width: 1000px;
+    }
+}
+
+@media screen  and (max-width: 1000px) {
+    .banner, .carousel-container, .horizontal-section-container, .card-horizontal {
+        max-width: 800px;
+    }
+
+    details, summary {
+        min-width: 800px;
+    }
+
+    .card-horizontal-info-description {
+        font-size: 17px;
+    }
+}
+
+
+@media screen  and (max-width: 900px) {
+    nav ul {
+        gap: 50px;
+    }
+
+    nav ul li {
+        font-size: 18px;
+    }
+
+    .image-post {
+        display: none;
+    }
+
+    .image-service {
+        width: 350px;
+        height: 350px;
+    }
+}
+
+@media screen  and (max-width: 800px) {
+    .banner, .carousel-container, .horizontal-section-container, .card-horizontal {
+        max-width: 700px;
+    }
+
+    details, summary {
+        min-width: 600px;
+    }
+
+    .container-contact-section {
+        width: 300px;
+        gap: 10px;
+        margin: 25px 10px;
+    }
+
+    .card-horizontal {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-horizontal-image {
+        display: none;
+    }
+}
+
+
+@media (max-width: 768px) {
+    header {
+        gap: 20px;
+    }
+
+    .menu-hamburger {
+        display: block;
+    }
+
+    .menu-hamburger i {
+        color: var(--main-color);
+        font-size: 2.7em;
+        cursor: pointer;
+    }
+
+    nav::before,
+    nav::after {
+        content: none;
+        display: none;
+    }
+
+    .menu-list {
+        margin: 0;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        background: var(--main-color);
+        z-index: 1000;
+    }
+
+    #check-menu-hamburger:checked ~ .menu-list {
+        display: flex;
+    }
+
+    .menu-list li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu-list a {
+        display: block;
+        padding: 15px;
+        color: white;
+    }
+}
+
+
+@media screen  and (max-width: 700px) {
+    .contact-section {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .banner, .carousel-container, .horizontal-section-container, .card-horizontal {
+        max-width: 600px;
+    }
+
+    details, summary {
+        min-width: 500px;
+    }
+}
+
+
+@media screen  and (max-width: 600px) {
+    .banner, .carousel-container, .horizontal-section-container, .card-horizontal {
+        max-width: 550px;
+    }
+}
+
+
+@media screen  and (max-width: 550px) {
+    .banner, .carousel-container, .horizontal-section-container, .card-horizontal {
+        max-width: 500px;
+    }
+}
+
+
+@media screen  and (max-width: 500px) {
+    .banner, .carousel-container, .horizontal-section-container, .card-horizontal {
+        max-width: 450px;
+    }
+}
+
+
+@media screen  and (max-width: 450px) {
+    .banner, .carousel-container, .horizontal-section-container, .card-horizontal {
+        max-width: 400px;
+    }
 }

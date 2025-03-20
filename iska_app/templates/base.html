@@ -19,7 +19,11 @@
             </a>
         </div>
         <nav class="flex-center w100">
-            <ul class="flex-row">
+            <input type="checkbox" id="check-menu-hamburger">
+            <label for="check-menu-hamburger" class="menu-hamburger">
+                <i class="fas fa-bars"></i>
+            </label>
+            <ul class="menu-list flex-row">
                 <li>
                     <a href="{% url 'inicio' %}" title="Sección de Inicio">INICIO</a>
                 </li>
@@ -43,5 +47,11 @@
         <p>© 2025 Iska</p>
         <p>Todos los derechos reservados</p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector(".menu-links").classList.toggle("show");
+        }
+    </script>
 </body>
 </html>
