@@ -17,7 +17,7 @@ class Service(models.Model):
     description = models.TextField(max_length=500)
     text_button = models.CharField(max_length=50)
     image = CloudinaryField('image', resource_type='image')
-    key_words = models.CharField(max_length=100)
+    key_words = models.CharField(max_length=200)
 
     def __str__(self):
         return self.title
