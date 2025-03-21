@@ -41,10 +41,6 @@ def contacto(request):
             name = form.cleaned_data['name']
             email = form.cleaned_data['email']
             message = form.cleaned_data['message']
-
-            print(f"Nombre: {name}")
-            print(f"Correo: {email}")
-            print(f"Mensaje: {message}")
             
             return render(request, 'congrats.html')
         else:
