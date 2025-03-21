@@ -147,7 +147,7 @@ nav ul li a {
 
 .carousel-title {
     position: absolute;
-    top: 40%;
+    top: 35%;
     width: 100%;
     color: white;
     font-size: 30px;
@@ -160,7 +160,7 @@ nav ul li a {
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 55%;
+    top: 60%;
     width: 100%;
 }
 
@@ -408,7 +408,7 @@ details[open] summary::after {
 
 details p {
     margin: 0;
-    padding: 30px;
+    padding: 15px;
     background-color: var(--light-color);
     color: var(--dark-color);
 }
@@ -587,6 +587,10 @@ footer {
     .menu-list a:hover {
         color: white;
     }
+
+    .carousel-container {
+        height: 350px;
+    }
 }
 
 
@@ -616,6 +620,11 @@ footer {
 @media screen  and (max-width: 550px) {
     .banner, .carousel-container, .horizontal-section-container, .card-horizontal {
         max-width: 500px;
+    }
+
+    details, summary {
+        min-width: 0;
+        width: 100vw;
     }
 }
 
