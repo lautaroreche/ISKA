@@ -6,7 +6,7 @@
 
 {% block content %}
     <section class="flex-center">
-        <div class="carousel-container">
+        <div class="carousel-container w100">
             <div class="carousel">
                 {% for image_carousel in images_carousel %}
                     <div class="carousel-item">
@@ -47,7 +47,7 @@
             {% endfor %}
         </div>
     </section>
-    <section class="flex-col flex-center">
+    <section class="flex-col flex-center w100">
         <div class="faq-section-container">
             <h2 class="title-section">Preguntas frecuentes</h2>
             {% for faq in faqs %}
