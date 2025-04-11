@@ -75,7 +75,7 @@ header {
 }
 
 .container-header {
-    justify-content: space-around;
+    justify-content: space-evenly;
     max-width: 1200px;
 }
 
@@ -235,22 +235,25 @@ nav ul li a {
     font-size: 19px;
 }
 
-.contact-section {
-    justify-content: space-evenly;
+.contact-section-banner {
     min-height: 250px;
+    justify-content: space-around;
 }
 
-.contact-section div {
+.contact-section-banner div {
     gap: 10px;
-    min-width: 200px ;
 }
 
-.contact-section i {
+.contact-section-banner i {
     color: var(--main-color);
-    font-size: 35px;
+    font-size: 45px;
 }
 
-.contact-section p, .contact-section a {
+.contact-section-form {
+    max-width: 500px;
+}
+
+.contact-section-banner p, .contact-section-banner a, .contact-section-form p, .contact-section-form a {
     color: var(--dark-color);
     font-size: 20px;
     text-decoration: none;
@@ -261,7 +264,8 @@ form {
 }
 
 .form-group {
-    margin: 10px;
+    margin: 10px 0;
+    gap: 3px;
 }
 
 form label {
@@ -284,6 +288,10 @@ form input:focus, form textarea:focus {
     border: 2px solid var(--main-color);
     outline: none;
     border-radius: 4px;
+}
+
+.social-media-icons-container {
+    gap: 10px;
 }
 
 .social-media-icons-container i {
@@ -451,12 +459,6 @@ details, summary {
     font-size: 18px;
 }
 
-.container-contact-section {
-    width: 400px;
-    gap: 10px;
-    margin: 25px 10px;
-}
-
 footer {
     justify-content: space-evenly;
     align-items: center;
@@ -505,12 +507,6 @@ footer {
 @media screen  and (max-width: 800px) {
     .horizontal-section-container, .card-horizontal {
         max-width: 600px;
-    }
-
-    .container-contact-section {
-        width: 300px;
-        gap: 10px;
-        margin: 25px 10px;
     }
 
     .card-horizontal {
@@ -580,6 +576,11 @@ footer {
     .button-prev, .button-next {
         display: none;
     }
+
+    .contact-section-banner {
+        flex-direction: column-reverse;
+        gap: 50px;
+    }
 }
 
 
@@ -590,11 +591,6 @@ footer {
     
     .carousel-button-container {
         top: 60%;
-    }
-
-    .contact-section {
-        flex-direction: column-reverse;
-        gap: 40px;
     }
 }
 

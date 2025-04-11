@@ -8,44 +8,27 @@
     <section class="banner flex-center">
         <h3>Contacto</h3>
     </section>
-    <main class="contact-section flex-row flex-center w100">
-        <div class="container-contact-section">
-            <h2 class="title-section">Contáctanos</h2>
-            <p>¡Contáctanos para empezar tu camino hacia el bienestar! Estamos aquí para acompañarte en tu proceso de crecimiento personal y cuidado de tu salud.</p>
-            <form method="post">
-                {% csrf_token %}
-                <div class="form-group flex-col">
-                    {{ form.name.label_tag }}
-                    {{ form.name }}
-                </div>
-                <div class="form-group flex-col">
-                    {{ form.email.label_tag }}
-                    {{ form.email }}
-                </div>
-                <div class="form-group flex-col">
-                    {{ form.message.label_tag }}
-                    {{ form.message }}
-                </div>
-                <button type="submit" class="form-button w100">Enviar</button>
-            </form>
-        </div>
-        <div class="container-contact-section flex-col flex-center">
-            <i class="fa-solid fa-thumbs-up"></i>
-            <p>Conectar</p>
-            <div class="social-media-icons-container flex-center">
-                <a href="">
-                    <i class="fa-brands fa-facebook-f"></i>
-                </a>
-                <a href="">
-                    <i class="fa-brands fa-x-twitter"></i>
-                </a>
-                <a href="">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="">
-                    <i class="fa-brands fa-youtube"></i>
-                </a>
+    <main class="contact-section-form flex-col flex-center w100">
+        <h2 class="title-section">Contáctanos</h2>
+        <p>¡Contáctanos para empezar tu camino hacia el bienestar! Estamos aquí para acompañarte en tu proceso de crecimiento personal y cuidado de tu salud.</p>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group flex-col">
+                {{ form.name.label_tag }}
+                {{ form.name }}
             </div>
-        </div>
+            <div class="form-group flex-col">
+                {{ form.email.label_tag }}
+                {{ form.email }}
+            </div>
+            <div class="form-group flex-col">
+                {{ form.message.label_tag }}
+                {{ form.message }}
+            </div>
+            <button type="submit" class="form-button w100">Enviar</button>
+        </form>
     </main>
+
+    {% include 'contact_banner.html' %}
+
 {% endblock %}
