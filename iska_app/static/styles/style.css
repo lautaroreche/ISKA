@@ -337,7 +337,6 @@ form input:focus, form textarea:focus {
 .card-horizontal-image {
     width: 450px;
     height: 450px;
-    object-fit: cover;
     border-radius: 5px;
 }
 

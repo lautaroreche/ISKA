@@ -12,9 +12,9 @@
         <section class="card-section">
             <div class="cards-container flex-col flex-center">
                 {% for post in posts %}
-                    <div class="card-horizontal flex-row">
+                    <div class="card-horizontal flex-center flex-row w100">
                         <img src="{{ post.image.url }}" alt="{{ post.title }}" class="card-horizontal-image image-post">
-                        <div class="card-horizontal-detail flex-col">
+                        <div class="card-horizontal-detail flex-col w100">
                             <p class="card-info-title card-horizontal-info-title">{{ post.title }}</p>
                             {% with words_list=post.content.split %}
                                 <p class="card-horizontal-info-description">
