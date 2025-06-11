@@ -71,6 +71,7 @@ header, footer, section, main {
 }
 
 header {
+    padding: 20px;
     border-bottom: 1px solid var(--grey-color);
 }
 
