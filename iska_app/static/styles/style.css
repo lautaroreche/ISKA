@@ -75,7 +75,7 @@ header {
 }
 
 .container-header {
-    justify-content: space-evenly;
+    justify-content: space-between;
     max-width: 1200px;
 }
 
